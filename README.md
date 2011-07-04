@@ -1,7 +1,10 @@
-SocketStream Chat
+Infinite Button Cooperative Edition 2.0
 ===
 
-Chat app which demos the open source SocketStream framework at https://github.com/socketstream/socketstream
+Infinite fun with the infinite Button Cooperative Edition 2.0.
+This is just an example on how to use SocketStream, not a real game. It's not even fun.
+
+(and this README is basically the one from Socketchat, see https://github.com/addyosmani/socketchat.git)
 
 INSTALL
 -------
@@ -48,12 +51,12 @@ Step 4 - Install SocketStream
     cd socketstream/
     npm install -g
     
-Step 4 - Install SocketStream chat
+Step 4 - Install Infinite Button Cooperative Edition 2.0
 
-    git clone https://github.com/addyosmani/socketchat
-    cd socketchat/
+    git clone https://eprochasson@github.com/eprochasson/infinite-button.git
+    cd infinite-button/
     npm link
 
-Step 5 - Run SocketStream cht
+Step 5 - Run Infinite Button Cooperative Edition 2.0
 
     socketstream start
