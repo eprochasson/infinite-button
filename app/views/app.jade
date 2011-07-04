@@ -1,0 +1,20 @@
+!!! 5
+html(lang:"en")
+  head
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="black-translucent")
+    meta(name="viewport", content="width=1024, initial-scale=1, user-scalable=no")
+    != SocketStream
+    title Infinite Button, Cooperative mode
+  body
+
+    
+    #header Infinite Button, Cooperative mode
+    #content
+      button#button(onmousedown='SS.server.app.userPress()', onmouseup='SS.server.app.userRelease()') Press me !
+      #footer
+         span Visitor connected :
+         span#connected
+         span | Visitor pressing the button :
+         span#pressing
