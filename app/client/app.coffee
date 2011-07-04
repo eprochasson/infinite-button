@@ -3,8 +3,8 @@
 # This function is called automatically once the websocket is setup
 exports.init = ->
 
-  SS.server.app.init (user) ->
-    if user then $('#main').show() else displaySignInForm()
+  SS.server.app.init (->)
+    
 
   processMessage = (params) ->
     console.log("Params",params)
@@ -16,6 +16,17 @@ exports.init = ->
     else
       console.log("<=0")
       $('#button').css('background-color', 'red')
+    mousepos = params.mousepos
+    for user,pos of mousepos
+      if $('div#'+user).length == 0
+        $('body').append('<div class="ghostpointer" id="'+user+'">')
+        $('div#'+user).css('left',pos.x)
+        $('div#'+user).css('top',pos.y)
+      else
+        $('div#'+user).css('left',pos.x)
+        $('div#'+user).css('top',pos.y)
+
 
   # Bind to new incoming message event
   SS.events.on 'status', processMessage
+

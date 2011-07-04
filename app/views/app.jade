@@ -8,13 +8,27 @@ html(lang:"en")
     != SocketStream
     title Infinite Button, Cooperative mode
   body
-
-    
     #header Infinite Button Cooperative Edition 2.0
     #content
-      button#button(onmousedown='SS.server.app.userPress()', onmouseup='SS.server.app.userRelease()') Press me !
+      button#button Press me !
       #footer
          span Visitor connected :
          span#connected
          span | Visitor pressing the button :
          span#pressing
+    script(type="text/javascript")
+       $("#button").mousedown(function(e){
+          SS.server.app.userPress()
+       })
+       $("#button").mouseup(function(e){
+          SS.server.app.userRelease();
+       });
+       var x,y;
+       $("body").mousemove(function(e){
+          x = e.pageX;
+          y = e.pageY;
+       })
+       $(document).everyTime(2000,function(i){
+        SS.server.app.updateMousePosition({x:x,y:y})
+       },0);
+       $(window).unload(function(){ SS.server.app.logout() })
