@@ -23,12 +23,4 @@ html(lang:"en")
        $("#button").mouseup(function(e){
           SS.server.app.userRelease();
        });
-       var x,y;
-       $("body").mousemove(function(e){
-          x = e.pageX;
-          y = e.pageY;
-       })
-       $(document).everyTime(2000,function(i){
-        SS.server.app.updateMousePosition({x:x,y:y})
-       },0);
        $(window).unload(function(){ SS.server.app.logout() })
